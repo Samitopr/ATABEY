@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ATABEY Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="atabey-identity.js"></script>
+</head>
+<body onload="autoRecognize()">
+  <div class="panel" style="margin: 100px auto; width: 300px;">
+    <h2>Login to ATABEY</h2>
+    <input type="text" id="user" placeholder="Username" /><br /><br />
+    <input type="password" id="pass" placeholder="Password" /><br /><br />
+    <button onclick="login()">Login</button>
+    <p>Or say your name:</p>
+    <input type="text" id="voice" placeholder="Simulated voice..." />
+    <button onclick="startVoiceRecognition()">🎤 Speak to Login</button>
+    <p id="error" style="color: red;"></p>
+  </div>
+  <script>
+    function login() {
+      const user = document.getElementById('user').value;
+      const pass = document.getElementById('pass').value;
+      if (user === 'Samitopr' && pass === 'Samairalynn#5') {
+        localStorage.setItem('atabey_login', 'true');
+        localStorage.setItem('auto_user', user);
+        window.location.href = 'index.html';
+      } else {
+        document.getElementById('error').innerText = 'Invalid credentials.';
+      }
+    }
+  </script>
+<script src="voice.js"></script></body>
+</html>

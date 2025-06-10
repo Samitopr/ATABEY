@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ATABEY Full Core</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div id="container">
+    <div id="logo"><img src="logo.svg" alt="ATABEY Logo"><h1>ATABEY</h1></div>
+    <div id="chart"><select id="pair" onchange="updateChart()" style="margin-bottom: 8px;"></select><br/><canvas id="candleChart" width="400" height="300"></canvas></div>
+    <div id="right-panel">
+      <div class="panel">
+        <h2>WebSocket</h2>
+        <button id="connect">Connect</button>
+        <button id="disconnect">Disconnect</button>
+      </div>
+      <div class="panel">
+        <h2>Voice Console</h2>
+        <button onclick="speak('ATABEY activated and listening.')">🔊 Speak</button>
+      </div>
+      <div class="panel">
+        <h2>Memory + Emotions</h2>
+        <div id="memory-display">[Emotion: 🌊 Calm]</div><br/>
+        <input type="text" id="meminput" placeholder="Memory Block" />
+        <button onclick="submitMemory()">Submit</button>
+        <button onclick="clearMemory()">Clear</button>
+      </div>
+      <div class="panel">
+        <h2>Coinbase</h2>
+        <button onclick="fetchBalance()">Check Balance</button><br/><br/>
+        <button onclick="tradeXRP(10)">Trade $10 XRP</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
